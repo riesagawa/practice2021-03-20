@@ -40,6 +40,17 @@ a {
   max-width: 100%;
   margin: 0 auto;
 }
+@media (max-width:767px) {
+  .inner {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+@media (min-width:768px) and (max-width:1200px) {
+  .inner {
+    padding: 0 24px;
+  }
+}
 
 .header {
   background-color: #3f51b5;
@@ -49,6 +60,13 @@ a {
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
   z-index: 100;
+  top: 0;
+  left: 0;
+}
+@media (max-width:767px) {
+  .header {
+    height: 60px;
+  }
 }
 
 .header_inner {
@@ -65,6 +83,11 @@ a {
   width: 205px;
   height: 40px;
 }
+@media (max-width:767px) {
+  .header_logo {
+    width: 182px;
+  }
+}
 .header_logo img {
   display: block;
 }
@@ -77,6 +100,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-left: auto;
+}
+@media (max-width:767px) {
+  .header_nav {
+    display: none;
+  }
 }
 .header_nav li:not(:first-child) {
   margin-left: 40px;
@@ -102,6 +130,13 @@ a {
   background: url(../img/mainvisual.png) no-repeat center center/cover;
   position: relative;
   text-align: center;
+  margin-top: 100px;
+}
+@media (max-width:767px) {
+  .main-visual {
+    margin-top: 60px;
+    height: 420px;
+  }
 }
 
 .main-visual_content {
@@ -111,11 +146,17 @@ a {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
+  padding: 0 15px;
 }
 
 .main-visual_title {
   font-size: 64px;
   font-weight: 700;
+}
+@media (max-width:767px) {
+  .main-visual_title {
+    font-size: 36px;
+  }
 }
 
 .main-visual_lead {
@@ -123,13 +164,26 @@ a {
   font-weight: 700;
   margin-top: 24px;
 }
+@media (max-width:767px) {
+  .main-visual_lead {
+    font-size: 18px;
+    margin-top: 18px;
+    line-height: 1.2;
+  }
+}
 
 .main-visual_button {
   margin-top: 36px;
 }
+@media (max-width:767px) {
+  .main-visual_button {
+    margin-top: 28px;
+  }
+}
 .main-visual_button a {
   display: inline-block;
   width: 390px;
+  max-width: 100%;
   height: 80px;
   line-height: 80px;
   font-size: 24px;
@@ -140,4 +194,12 @@ a {
   border-radius: 8px;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+@media (max-width:767px) {
+  .main-visual_button a {
+    width: 280px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 60px;
+  }
 }

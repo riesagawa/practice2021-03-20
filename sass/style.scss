@@ -52,6 +52,14 @@ a{
   width:$layout-width-inner;
   max-width:100%;
   margin:0 auto;
+  @include mq('sp'){
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  @include mq('tab'){
+  padding:0 24px;
+  }
+
 }
 .header{
   background-color: $main-color;
@@ -61,6 +69,12 @@ a{
   width: 100%;
   box-shadow:0 3px 3px rgba(#000,0.16);
   z-index:100;
+  top: 0;
+  left: 0;
+@include mq('sp'){
+height:60px;
+}
+
 }
 .header_inner{
   display:flex;
@@ -70,6 +84,9 @@ a{
 .header_logo{
   width:205px;
   height:40px;
+  @include mq('sp'){
+  width:182px;
+  }
    img{
     display:block;
   }
@@ -78,6 +95,10 @@ a{
   display:flex;
   align-items:center;
   margin-left:auto;
+  @include mq('sp'){
+  display: none;
+}
+
   li{
     &:not(:first-child){
       margin-left:40px;
@@ -106,6 +127,11 @@ a{
   background: url(../img/mainvisual.png)no-repeat center center / cover;
   position:relative;
   text-align: center;
+  margin-top: 100px;
+  @include mq('sp'){
+  margin-top: 60px;
+  height:420px;
+  }
 }
 //
 .main-visual_content{
@@ -114,21 +140,38 @@ a{
   left:50%;
   transform:translate(-50%,-50%);
   width:100%;
+  padding:0 15px;
 }
 .main-visual_title{
   font-size: 64px;
   font-weight:700;
+  @include mq('sp'){
+  font-size:36px;
+  }
 }
 .main-visual_lead{
   font-size: 24px;
   font-weight:700;
   margin-top:24px;
+
+  @include mq('sp'){
+  font-size:18px;
+  margin-top: 18px;
+  line-height:1.2;
+  }
 }
 .main-visual_button{
   margin-top:36px;
+  @include mq('sp'){
+  margin-top:28px;
+  }
   a{
     display:inline-block;
     width:390px;
+    max-width:100%;
+    //ボタンに固定値の幅を指定するとレスポンシブ
+    //の時画面からはみ出るので、max-widthを
+    // セットで記述しておく。
     height:80px;
     line-height:80px;
     font-size: 24px;
@@ -138,6 +181,12 @@ a{
     text-decoration:none;
     border-radius:8px;
     box-shadow: 0px 3px 6px rgba(#000,0.16);;
+    @include mq('sp'){
+    width:280px;
+    height: 60px;
+    font-size:24px;
+    line-height: 60px;
+    }
   }
 }
 

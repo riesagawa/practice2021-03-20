@@ -1,0 +1,179 @@
+$main-color:#3f51b5;
+$color-accent:#e81919;
+$color-text:#333333;
+
+//最大幅の定義
+$layout-width-inner:1200px;
+//ブレークポイントの定義
+$breakpoints:(
+'sp': '(max-width:767px)',
+'tab': '(min-width:768px) and (max-width:#{$layout-width-inner})',
+'pc': '(min-width:#{$layout-width-inner})',
+);
+//メディアクエリ用のmixinを定義。
+@mixin mq($breakpoint: sp){
+  @media #{map-get($breakpoints,$breakpoint)}{
+    @content;
+}
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  background-color: #fff;
+  color:$color-text;
+  margin:0;
+}
+img{
+  max-width: 100%;
+  height:auto;
+}
+ul,ol{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+h1,h2,h3,h4,h5,h6{
+  padding:0;
+  margin:0;
+}
+a{
+  color:inherit;
+  //inherit=親要素の色を継承し自動的に色がつくようにする
+}
+.inner{
+  width:$layout-width-inner;
+  max-width:100%;
+  margin:0 auto;
+}
+.header{
+  background-color: $main-color;
+  height:100px;
+  position:fixed;
+  //fixedすると幅がなくなるのでwidth100%
+  width: 100%;
+  box-shadow:0 3px 3px rgba(#000,0.16);
+  z-index:100;
+}
+.header_inner{
+  display:flex;
+  align-items:center;
+  height:inherit;//親要素の値を継承する
+}
+.header_logo{
+  width:205px;
+  height:40px;
+   img{
+    display:block;
+  }
+}
+.header_nav{
+  display:flex;
+  align-items:center;
+  margin-left:auto;
+  li{
+    &:not(:first-child){
+      margin-left:40px;
+    }
+    a{
+      color:#fff;
+      text-decoration:none;
+      position:relative;
+    &.is-active{
+      &::after{
+        content:"";
+        position:absolute;
+        bottom:-8px;
+        left:0;
+        width:100%;
+        height:2px;
+        background: $color-accent;
+      }
+    }
+    }
+  }
+}
+.main-visual{
+  height:600px;
+  width:100%;
+  background: url(../img/mainvisual.png)no-repeat center center / cover;
+  position:relative;
+  text-align: center;
+}
+//
+.main-visual_content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+}
+.main-visual_title{
+  font-size: 64px;
+  font-weight:700;
+}
+.main-visual_lead{
+  font-size: 24px;
+  font-weight:700;
+  margin-top:24px;
+}
+.main-visual_button{
+  margin-top:36px;
+  a{
+    display:inline-block;
+    width:390px;
+    height:80px;
+    line-height:80px;
+    font-size: 24px;
+    font-weight: 700;
+    color:#fff;
+    background-color:$main-color;
+    text-decoration:none;
+    border-radius:8px;
+    box-shadow: 0px 3px 6px rgba(#000,0.16);;
+  }
+}
+
+
+
+
+//
+//呼び出し
+@include mq('sp'){
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

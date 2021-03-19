@@ -1,0 +1,143 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333333;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.inner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #3f51b5;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+  z-index: 100;
+}
+
+.header_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+}
+
+.header_logo {
+  width: 205px;
+  height: 40px;
+}
+.header_logo img {
+  display: block;
+}
+
+.header_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+.header_nav li:not(:first-child) {
+  margin-left: 40px;
+}
+.header_nav li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+.header_nav li a.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e81919;
+}
+
+.main-visual {
+  height: 600px;
+  width: 100%;
+  background: url(../img/mainvisual.png) no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.main-visual_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.main-visual_title {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.main-visual_lead {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.main-visual_button {
+  margin-top: 36px;
+}
+.main-visual_button a {
+  display: inline-block;
+  width: 390px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #3f51b5;
+  text-decoration: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
